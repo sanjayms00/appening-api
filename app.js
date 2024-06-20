@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //Routing
 app.use("/api/auth", authenticationRoute);
-app.use("/api/user", userRoute);
+app.use("/api/users", userRoute);
 app.use("/api/string", stringSearchRoute);
 //Wild card route
 app.all("**", wildCardRoute);

@@ -7,6 +7,7 @@ const arrayToLowerCase = (arr) => {
   });
 };
 
+//function to check anagram
 const isAnagram = (lowerCaseArray, wordArr) => {
   let validAnagram = false;
   let wordStringify = JSON.stringify(wordArr);
