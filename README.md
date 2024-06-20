@@ -1,6 +1,6 @@
 # appening-api
 
-API for authentication, authorization, and string searching to find anagrams in an array.
+API for authentication, authorization, and string searching to find anagrams in an array. Additionally, it provides user listing functionality exclusively for admin users.\
 
 ## Getting Started
 
