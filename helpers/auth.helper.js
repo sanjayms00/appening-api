@@ -2,7 +2,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 //Password hasing function
-const hashPassword = (password) => {
+const hashPassword = async (password) => {
   if (!password) {
     throw new Error("Password not found");
   }
@@ -14,7 +14,7 @@ const hashPassword = (password) => {
 };
 
 //Token generate function
-const createJwtToken = (createdUser) => {
+const createJwtToken = async (createdUser) => {
   if (!createdUser) {
     throw new Error("User data not found");
   }
@@ -32,7 +32,20 @@ const createJwtToken = (createdUser) => {
   return { token, payload };
 };
 
+//Check hashed password
+const checkHashedPassword = async (password, hashedPassword) => {
+  if (!password || !hashPassword) {
+    throw new Error("Password not found");
+  }
+
+  //check the hashed password
+  const checkPassword = bcrypt.compareSync(password, hashedPassword);
+
+  return checkPassword;
+};
+
 module.exports = {
   hashPassword,
   createJwtToken,
+  checkHashedPassword,
 };
